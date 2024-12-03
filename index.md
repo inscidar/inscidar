@@ -5,7 +5,7 @@ title: Home
 
 <div class='title-panel'>
 <div class='title'>
-    Accessibility Database of Life Science Data Resources
+    Inclusive Science Data Accessibility Report
 </div>
 <div class='subtitle'>
     An open database and data portal for storing and keeping track of the digital accessibility of life science data resources.
@@ -19,8 +19,8 @@ title: Home
 
 ## Publications
 
-Sehi L'Yi, Thomas C Smits, Alexander Lex, Nils Gehlenborg, 
-Digital Accessibility of Life Sciences Data Portals and Journal Websites, 
+Sehi L’Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía Rojas, Alexander Lex, Nils Gehlenborg.
+A comprehensive evaluation of life sciences data resources reveals significant accessibility barriers,
 OSF Preprints, 10.31219/osf.io/5v98j
 
 <script type="text/javascript">
