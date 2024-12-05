@@ -6,7 +6,7 @@ $theme-color-light: #EEE7FB;
 $theme-color-lightest: #F8F6FD;
 $theme-color-dark: #666666;
 $font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
-$font-size: 1rem;
+$font-size: 1.1rem;
 $font-size-large: 1.3rem;
 $font-size-larger: 1.8rem;
 $font-size-largest: 2.3rem;
@@ -17,7 +17,7 @@ $font-weight: 400;
 $font-weight-bold: 600;
 $font-weight-boldest: 800;
 $content-width: 1024px;
-$line-height: 2;
+$line-height: 1.8;
 
 html,
 body {
@@ -91,7 +91,7 @@ ul a {
 }
 
 nav h1 a {
-  font-weight: $font-weight-boldest;
+  font-weight: $font-weight-bold;
   font-size: $font-size-large;
   text-decoration: none;
   color: #20103F !important;
@@ -171,18 +171,17 @@ footer {
 
 .content .title-panel {
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .content .title {
   font-size: $font-size-largest;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-boldest;
 }
 
 .content .subtitle {
-  font-size: $font-size-large;
-  color: grey;
-  line-height: 1.4;
+  // font-size: $font-size-large;
+  // color: grey;
 }
 
 .content #visual-statistics {
@@ -204,8 +203,9 @@ footer {
 .publication {
   padding: 1rem;
   color: black;
-  border: 2px solid grey;
-  box-shadow: 3px 3px lightgrey;
+  border: 2px solid lightgrey;
+  border-radius: 7px;
+  box-shadow: 2px 2px lightgrey;
   background: white;
 
   h3 {
