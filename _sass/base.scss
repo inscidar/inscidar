@@ -201,6 +201,19 @@ footer {
   height: 100%;
 }
 
+.publication {
+  padding: 1rem;
+  color: black;
+  border: 2px solid grey;
+  box-shadow: 3px 3px lightgrey;
+  background: white;
+
+  h3 {
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
 .team {
   width: 100%;
 }
