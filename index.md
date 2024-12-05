@@ -21,6 +21,13 @@ title: Home
 {% include publication.html %}
 {% endfor %}
 
+## Learn More
+
+<a href="https://hidivelab.org/research/teams/accessibility/">The Accessibility Team at the HIDIVE Lab of Harvard Medical School</a>
+
+
+<a href="https://github.com/hms-dbmi/life-sciences-a11y-evaluation">The Analysis GitHub Repository</a>
+
 <!--
 <div id='visual-statistics'>
     <div id='statistics-num-pages'></div>

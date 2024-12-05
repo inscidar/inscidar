@@ -6,8 +6,6 @@ permalink: /members/
 
 ## Members
 
-A list of team members in alphabetical order of the last name.
-
 <table class='team'>
     <tr>
         <th>Name</th>
