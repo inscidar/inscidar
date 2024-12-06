@@ -1,0 +1,31 @@
+---
+layout: home
+---
+
+{% assign plot_path = page.plot %}
+{% assign plot_full_path = '/assets/' | append: plot_path | relative_path %}
+{% assign plot_id = page.plot_id %}
+
+<h2>{{ page.title }}</h2>
+
+{{ content }}
+
+<div id='{{ plot_id }}' />
+
+<script type="text/javascript">
+
+  const plot = "{{plot_full_path}}";
+
+  const vegaOptions = {
+    renderer: "canvas",
+    actions: true,
+  };
+
+  window.onload = () => {
+    vegaEmbed(
+      '#{{ plot_id }}',
+      plot,
+      vegaOptions
+    );
+  }
+</script>

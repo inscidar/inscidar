@@ -109,6 +109,17 @@ All data is also available on [our GitHub repository for analysis](https://githu
   </ul>
 {% endfor %}
 
+## Summary Visualizations
+
+<div class='plots'>
+  {% assign plots = site.plots %}
+  {% for plot in plots %}
+  <a href='{{ plot.url | relative_url }}'>
+    {{ plot.title }}
+  </a>
+  {% endfor %}
+</div>
+
 
 ## Publications
 
