@@ -1,0 +1,15 @@
+- file: continent-estimated.csv
+  name: Estimated Failure Rates By Continent
+  desc: The estimated failure rates of data portals and journal websites grouped by continents
+- file: country-estimated.csv
+  name: Estimated Failure Rates By Country
+  desc: The estimated failure rates of data portals and journal websites grouped by countries
+- file: issues-criticality.csv
+  name: Accessibility Issues By Criticality
+  desc: Proportion of pages with accessibility issues in terms of their criticality, i.e., whether the issue is likely to block users performing tasks entirely
+- file: issues-data-related.csv
+  name: Accessibility Issues By Data-Relevance
+  desc: Proportion of pages with accessibility issues in terms of whether they are likely related to the perception of and interaction with data
+- file: issues-difficulty-to-fix.csv
+  name: Accessibility Issues By Difficulty to Fix
+  desc: Proportion of pages with accessibility issues in terms of their difficulty to fix in post-deployment (e.g., using browser extensions to workaround accessibility issues in already deployed websites)
