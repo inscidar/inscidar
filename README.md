@@ -1,8 +1,6 @@
-# Life Sciences Accessibility Evaluation Website
+# Inclusive Science Data Accessibility Report
 
-> This website is still a work in progress.
-
-This website showcases the [Life Sciences Accessibility Evaluation](https://github.com/hms-dbmi/life-sciences-a11y-evaluation).
+This website showcases the results of the [Life Sciences Accessibility Evaluation](https://github.com/hms-dbmi/life-sciences-a11y-evaluation).
 
 ## Development
 
@@ -11,7 +9,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-# Data availability
+## Data Availability
 The data resides in [this repository](https://github.com/hms-dbmi/life-sciences-a11y-evaluation/tree/main/data). It is not yet linked, so the data products are copied over. The zip folders (necessary for bulk downloads) are created with a script that can be run with:
 
 ```sh
