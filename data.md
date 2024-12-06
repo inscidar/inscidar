@@ -5,7 +5,7 @@ layout: home
 ---
 
 
-# Accessibility Data
+# Data for Analysis 2025
 
 This page showcases the data of the accessibility analyses and allows for easy downloading.
 
@@ -79,7 +79,6 @@ All data is also available on [our GitHub repository for analysis](https://githu
   </li>
 </ul>
 
-
 ## View single analyses
 <!-- list files for each unique date -->
 {% for date in unique_dates %}
@@ -94,13 +93,20 @@ All data is also available on [our GitHub repository for analysis](https://githu
             <span class="visually-hidden">Expand section for {{ file.name }}</span>
             <img id="icon-{{ date | slugify }}-{{ file.name | slugify }}" src="{{ '/assets/icons/triangle-right.svg' | relative_url }}" alt="Expand section for {{ file.name }}" width="16" height="16">
           </button>
-          <span class="file-title">{{ file.name }}</span>
+          {% assign file-descs = site.data.analysis-files | where: 'file', file.name %}
+          {% if file-descs.size > 0 %}
+          {% assign file-desc = file-descs[0] %}
+          {% else %}
+          {% assign file-desc = '' %}
+          {% endif %}
+          <span class="file-title">{{ file-desc.name | default: file.name }}</span>
           <a href="{{ file.path | relative_url }}" download class="download-link" tabindex=0>
             <span class="visually-hidden">Download {{ file.name }}</span>
             <img src="{{ '/assets/icons/download.svg' | relative_url }}" alt="Download {{ file.name }}" width="24" height="24">
           </a>
         </div>
         <div id="file-content-{{ date | slugify }}-{{ file.name | slugify }}" class="file-content" hidden>
+          {{ file-desc.desc }}
           <table class="file-preview">
           </table>
         </div>
