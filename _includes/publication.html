@@ -1,7 +1,6 @@
 <div class='publication'>
   <h3>{{ publication.blob_title }}</h3>
-  <span class='summary'>{{ publication.blob_content }}</span>
-  <br />
+  {{ publication.content }}
   <a href="{{ publication.publisher_url }}">Read on {{ publication.venue }}</a>
   <span> | </span>
   <a href="{{ publication.data_page | relative_url }}">Explore data</a>
