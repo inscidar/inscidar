@@ -8,7 +8,7 @@ title: Home
     Inclusive Science Data Accessibility Report
 </div>
 <div class='subtitle'>
-    INSCIDAR is an open platform to share and communicate the digital accessibility states of life sciences data resources. We perform accessibility evaluation regularly and share evaluation results in the form of data, online reports, and research publications. Our mission is to increase the accessibility of life sciences data resources, lowering barriers for people with disabilities to join the life sciences workforce.
+    <span lang="en" aria-label="insider">INSCIDAR</span> (pronounced "insider") is an open platform to share and communicate the digital accessibility states of life sciences data resources. We perform accessibility evaluation regularly and share evaluation results in the form of data, online reports, and research publications. Our mission is to increase the accessibility of life sciences data resources, lowering barriers for people with disabilities to join the life sciences workforce.
 
     This effort was initiated by the members of the HIDIVE Lab at Harvard Medical School (see <a href="https://hidivelab.org/research/teams/accessibility/our-accessibility-journey">Our Accessibility Journey</a>).
 </div>
