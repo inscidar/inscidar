@@ -28,6 +28,10 @@ title: Home
 
 <a href="https://github.com/hms-dbmi/life-sciences-a11y-evaluation">The Analysis GitHub Repository</a>
 
+## Funding
+
+This study was in part funded by NIH grants <a href="https://reporter.nih.gov/project-details/10452031">R01HG011773</a> and <a href="https://reporter.nih.gov/project-details/10984200">K99HG013348</a>.
+
 <!--
 <div id='visual-statistics'>
     <div id='statistics-num-pages'></div>
