@@ -100,6 +100,7 @@ All data is also available on [our GitHub repository for analysis](https://githu
           {% assign file-desc = '' %}
           {% endif %}
           <span class="file-title">{{ file-desc.name | default: file.name }}</span>
+          <span class="file-name">({{ file-desc.file }})</span>
           <a href="{{ file.path | relative_url }}" download class="download-link" tabindex=0>
             <span class="visually-hidden">Download {{ file.name }}</span>
             <img src="{{ '/assets/icons/download.svg' | relative_url }}" alt="Download {{ file.name }}" width="24" height="24">
@@ -248,6 +249,14 @@ Sehi L'Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía
   .toggle-button:hover, .toggle-button:focus, 
   .download-link:hover, .download-link:focus {
     outline: 3px solid #005fcc;
+  }
+
+  .file-title {
+    font-weight: bold;
+  }
+
+  .file-name {
+    margin-left: 6px;
   }
 
   .file-header {
