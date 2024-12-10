@@ -196,6 +196,14 @@ header>nav,
 
 .content .plot-caption {
   font-size: $font-size-large;
+  border-left: 6px solid #56B4E9;
+  padding-left: 12px;
+  padding-right: 6px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-bottom: 1rem;
+  border-radius: 1px;
+  background: #56B4E933;
 }
 
 .content #visual-statistics {
