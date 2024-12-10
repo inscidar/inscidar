@@ -5,7 +5,7 @@ layout: home
 ---
 
 
-# Data for Analysis 2025
+# Accessibility Data
 
 This page showcases the data of the accessibility analyses and allows for easy downloading.
 
