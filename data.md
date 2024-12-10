@@ -34,6 +34,8 @@ All data is also available on [our GitHub repository for analysis](https://githu
 {% assign unique_filenames = unique_filenames | split: " + " | shift | uniq | sort %}
 
 
+{% assign analysis-files = site.data.analysis-files %}
+
 ## Download in batch
 <ul class="download-list">
   <li class="download-item">
@@ -93,7 +95,7 @@ All data is also available on [our GitHub repository for analysis](https://githu
             <span class="visually-hidden">Expand section for {{ file.name }}</span>
             <img id="icon-{{ date | slugify }}-{{ file.name | slugify }}" src="{{ '/assets/icons/triangle-right.svg' | relative_url }}" alt="Expand section for {{ file.name }}" width="16" height="16">
           </button>
-          {% assign file-descs = site.data.analysis-files | where: 'file', file.name %}
+          {% assign file-descs = analysis-files | where: 'file', file.name %}
           {% if file-descs.size > 0 %}
           {% assign file-desc = file-descs[0] %}
           {% else %}
