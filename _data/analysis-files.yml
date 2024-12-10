@@ -1,39 +1,39 @@
 - file: continent-estimated.csv
   name: Estimated Failure Rates By Continent
-  desc: The estimated failure rates of data portals and journal websites grouped by continents
+  desc: This data represents the estimated failure rates of data portals and journal websites grouped by continents.
 - file: country-estimated.csv
   name: Estimated Failure Rates By Country
-  desc: The estimated failure rates of data portals and journal websites grouped by countries
+  desc: This data represents the estimated failure rates of data portals and journal websites grouped by countries.
 - file: issues-criticality.csv
   name: Accessibility Issues By Criticality
-  desc: Proportion of pages with accessibility issues in terms of their criticality, i.e., whether the issue is likely to block users performing tasks entirely
+  desc: This data represents the proportion of pages with accessibility issues in terms of their criticality, i.e., whether the issue is likely to block users performing tasks entirely.
 - file: issues-data-related.csv
   name: Accessibility Issues By Data-Relevance
-  desc: Proportion of pages with accessibility issues in terms of whether they are likely related to the perception of and interaction with data
+  desc: This data represents the proportion of pages with accessibility issues in terms of whether they are likely related to the perception of and interaction with data.
 - file: issues-difficulty-to-fix.csv
   name: Accessibility Issues By Difficulty to Fix
-  desc: Proportion of pages with accessibility issues in terms of their difficulty to fix in post-deployment (e.g., using browser extensions to workaround accessibility issues in already deployed websites)
+  desc: This data represents the proportion of pages with accessibility issues in terms of their difficulty to fix in post-deployment (e.g., using browser extensions to workaround accessibility issues in already deployed websites).
 - file: issues-overall-impact.csv
   name: Accessibility Issues By Overall Impact
-  desc: Proportion of pages with accessibility issues in terms of their overall impact
+  desc: This data represents the proportion of pages with accessibility issues in terms of their overall impact.
 - file: issues-missing-labels.csv
   name: Missing Labels
-  desc: Proportion of pages with missing labels
+  desc: This data represents the proportion of pages with missing labels.
 - file: issues-table-and-image-related.csv
   name: Table- and Image-related Issues
-  desc: Proportion of pages with accessibility issues related to tables and images
+  desc: This data represents the proportion of pages with accessibility issues related to tables and images.
 - file: issues-wcag-levels.csv
   name: Accessibility Issues By WCAG Levels
-  desc: Proportion of pages with accessibility issues in terms of WCAG levels
+  desc: This data represents the proportion of pages with accessibility issues in terms of WCAG levels
 - file: manual-test-results.csv
   name: Manual User Test Results
-  desc: The manual user testing results of three data portals with a blind screen reader user.
+  desc: This data represents the manual user testing results of three data portals with a blind screen reader user.
 - file: publisher-estimated.csv
   name: Estimated Failure Rates By Publisher
-  desc: The estimated failure rates of data portals and journal websites groupd by their publishers
+  desc: This data represents the estimated failure rates of data portals and journal websites groupd by their publishers.
 - file: resource-category-estimated.csv
   name: Estimated Failure Rates By Resource Category
-  desc: The estimated failure rates of life sciences websites grouped by resource categories
+  desc: This data represents the estimated failure rates of life sciences websites grouped by resource categories.
 - file: top-issues.csv
   name: Top Accessibility Issues
-  desc: Top 10 most frequently observed accessibility issues
+  desc: This data shows the top 10 most frequently observed accessibility issues.
