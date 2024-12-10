@@ -13,6 +13,9 @@
 - file: issues-difficulty-to-fix.csv
   name: Accessibility Issues By Difficulty to Fix
   desc: Proportion of pages with accessibility issues in terms of their difficulty to fix in post-deployment (e.g., using browser extensions to workaround accessibility issues in already deployed websites)
+- file: issues-overall-impact.csv
+  name: Accessibility Issues By Overall Impact
+  desc: Proportion of pages with accessibility issues in terms of their overall impact
 - file: issues-missing-labels.csv
   name: Missing Labels
   desc: Proportion of pages with missing labels
