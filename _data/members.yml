@@ -4,43 +4,53 @@
   organization: Harvard Medical School
   email: sehi_lyi@hms.harvard.edu
   url: https://sehilyi.com
+  order: 1
 - firstname: Nils
   lastname: Gehlenborg
   role: "Project Lead"
   organization: Harvard Medical School
   email: nils@hms.harvard.edu
   url: https://hidivelab.org
+  order: 8
 - firstname: Alexander
   lastname: Lex
   role: "Member"
   organization: University of Utah
   email: alex@sci.utah.edu
   url: https://vdl.sci.utah.edu/team/lex/
+  order: 7
 - firstname: Andrew
   lastname: Mar
   middlename: P.
   role: "Member"
   organization: Harvard Medical School
   email: apmar@berkeley.edu
+  order: 3
 - firstname: Sofía
   lastname: Rojas
   role: "Member"
   organization: Harvard Medical School
   email: srojas@hms.harvard.edu
+  order: 6
 - firstname: Thomas
   lastname: Smits
   middlename: C.
   role: "Member"
   organization: Harvard Medical School
   email: tsmits@hms.harvard.edu
+  url: https://thomcsmits.github.io/
+  order: 4
 - firstname: Lawrence
   lastname: Weru
   role: "Member"
   organization: Harvard Medical School
   email: lawrence_weru@hms.harvard.edu
+  url: https://lweru.com/
+  order: 5
 - firstname: Harrison
   middlename: G.
   lastname: Zhang
   role: "Member"
   organization: Stanford University
   email: hgzhang@stanford.edu
+  order: 2

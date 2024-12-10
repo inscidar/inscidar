@@ -11,6 +11,16 @@ This page showcases the data of the accessibility analyses and allows for easy d
 
 All data is also available on [our GitHub repository for analysis](https://github.com/hms-dbmi/life-sciences-a11y-evaluation). 
 
+## Summary Visualizations
+
+<ul class='plots'>
+  {% assign plots = site.plots %}
+  {% for plot in plots %}
+  <li><a href='{{ plot.url | relative_url }}'>
+    {{ plot.title }}
+  </a></li>
+  {% endfor %}
+</ul>
 
 <!-- Retrieve all unique dates -->
 {% assign csv_files_all = site.static_files | where_exp: "file", "file.path contains '/assets/csv' and file.extname == '.csv'" %}
@@ -118,21 +128,7 @@ All data is also available on [our GitHub repository for analysis](https://githu
   </ul>
 {% endfor %}
 
-## Summary Visualizations
-
-<div class='plots'>
-  {% assign plots = site.plots %}
-  {% for plot in plots %}
-  <a href='{{ plot.url | relative_url }}'>
-    {{ plot.title }}
-  </a>
-  {% endfor %}
-</div>
-
-
-## Publications
-
-Sehi L'Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía Rojas, Alexander Lex, Nils Gehlenborg. A comprehensive evaluation of life sciences data resources reveals significant accessibility barriers, OSF Preprints, [10.31219/osf.io/5v98j](https://doi.org/10.31219/osf.io/5v98j)
+{% include cite.html %}
 
 <script>
   const filenameDownload = document.getElementById('download-filename');

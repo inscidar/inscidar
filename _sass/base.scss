@@ -196,9 +196,15 @@ header>nav,
 
 .content .plot-caption {
   font-size: $font-size-large;
-  color: #666;
-  border-left: 6px solid lightgrey;
+  border-left: 6px solid #CC79A7;
   padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  background: rgb(204, 121, 167);
+  background: linear-gradient(90deg, rgba(204, 121, 167, 0.089791810278799) 0%, rgba(179, 121, 204, 0.0925929307269783) 100%);
 }
 
 .content #visual-statistics {
