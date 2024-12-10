@@ -12,7 +12,9 @@ layout: home
   <p>{{ content }}</p>
 </div>
 
-<div id='{{ plot_id }}' />
+<div id='{{ plot_id }}'></div>
+
+{% include cite.html %}
 
 <script type="text/javascript">
 
@@ -21,6 +23,7 @@ layout: home
   const vegaOptions = {
     renderer: "svg",
     actions: true,
+    responsive: true,
   };
 
   window.onload = () => {
