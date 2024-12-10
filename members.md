@@ -12,7 +12,7 @@ permalink: /members/
         <th>Email</th>
         <th>Organization</th>
     </tr>
-    {% assign members = site.data.members | sort: 'lastname' %}
+    {% assign members = site.data.members | sort: 'order' %}
     {% for member in members %}
     <tr>
         {% if member.url %}
