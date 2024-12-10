@@ -107,7 +107,7 @@ All data is also available on [our GitHub repository for analysis](https://githu
           </a>
         </div>
         <div id="file-content-{{ date | slugify }}-{{ file.name | slugify }}" class="file-content" hidden>
-          {{ file-desc.desc }}
+          <p>{{ file-desc.desc }}</p>
           <table class="file-preview">
           </table>
         </div>
