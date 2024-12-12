@@ -119,7 +119,7 @@ All data is also available on [our GitHub repository for analysis](https://githu
         </div>
         <div id="file-content-{{ date | slugify }}-{{ file.name | slugify }}" class="file-content" hidden>
           <p>{{ file-desc.desc }}</p>
-          <div class="file-preview-header">File Preview (up to 4 rows and 10 columns):</div>
+          <div class="file-preview-header">File Preview (up to 4 rows and 12 columns):</div>
           <table class="file-preview">
           </table>
           <div class="file-name"><code>{{ file.name }}</code></div>
@@ -190,7 +190,8 @@ All data is also available on [our GitHub repository for analysis](https://githu
           rows.forEach((row, rowIndex) => {
             const columns = row.split(',');
             tableHTML += '<tr>';
-            columns.slice(0, 10).forEach(column => {
+            console.log(columns.length);
+            columns.slice(0, 12).forEach(column => {
               if (rowIndex === 0) {
                 tableHTML += `<th>${column}</th>`;
               } else {
