@@ -119,7 +119,7 @@ All data is also available on [our GitHub repository for analysis](https://githu
         </div>
         <div id="file-content-{{ date | slugify }}-{{ file.name | slugify }}" class="file-content" hidden>
           <p>{{ file-desc.desc }}</p>
-          <div class="file-preview-header">File Preview (up to 4 rows and 12 columns):</div>
+          <div class="file-preview-header">File Preview (up to 4 rows):</div>
           <table class="file-preview">
           </table>
           <div class="file-name"><code>{{ file.name }}</code></div>
@@ -186,12 +186,18 @@ All data is also available on [our GitHub repository for analysis](https://githu
           const rows = csvText.split('\n').slice(0, 5); // max 5 rows
           const table = content.querySelector('table');
           let tableHTML = '';
-          
+          // we do not want to show the index column to save space
+          const firstColNull = rows[0]?.split(',')?.[0] === "";
           rows.forEach((row, rowIndex) => {
+            // to safely parse string values containing commas, replace commas with a predefined string
+            const COMMA_WITHIN_DOUBLE_QUOTE = '###COMMA###';
+            row = row.replace(/"(.*?)"/g, (str) => str.replaceAll(',', COMMA_WITHIN_DOUBLE_QUOTE));
             const columns = row.split(',');
             tableHTML += '<tr>';
-            console.log(columns.length);
-            columns.slice(0, 12).forEach(column => {
+            columns.forEach((column, colIndex) => {
+              // recover the commas within each column
+              column = column.replaceAll(COMMA_WITHIN_DOUBLE_QUOTE, ',');
+              if(firstColNull && colIndex === 0) return;
               if (rowIndex === 0) {
                 tableHTML += `<th>${column}</th>`;
               } else {
