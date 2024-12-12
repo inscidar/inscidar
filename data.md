@@ -119,9 +119,10 @@ All data is also available on [our GitHub repository for analysis](https://githu
         </div>
         <div id="file-content-{{ date | slugify }}-{{ file.name | slugify }}" class="file-content" hidden>
           <p>{{ file-desc.desc }}</p>
-          <span class="file-name">File name: <code>{{ file.name }}</code></span>
+          <div class="file-preview-header">File Preview (up to 4 rows and 10 columns):</div>
           <table class="file-preview">
           </table>
+          <div class="file-name"><code>{{ file.name }}</code></div>
         </div>
       </li>
     {% endfor %}
@@ -166,7 +167,17 @@ All data is also available on [our GitHub repository for analysis](https://githu
     icon.src = isExpanded 
       ? "{{ '/assets/icons/triangle-right.svg' | relative_url }}" 
       : "{{ '/assets/icons/triangle-down.svg' | relative_url }}";
-    
+   
+    // format values of each cell in the table
+    const format = (str) => {
+      if(+str && +str % 1 !== 0) {
+        // float, e.g., str is "3.1429"
+        return (+str).toFixed(3);
+      } else {
+        return str;
+      }
+    }
+
     // check if expanded, else, fetch content
     if (!isExpanded && !content.getAttribute('data-loaded')) {
       fetch(filePath)
@@ -179,11 +190,11 @@ All data is also available on [our GitHub repository for analysis](https://githu
           rows.forEach((row, rowIndex) => {
             const columns = row.split(',');
             tableHTML += '<tr>';
-            columns.forEach(column => {
+            columns.slice(0, 10).forEach(column => {
               if (rowIndex === 0) {
                 tableHTML += `<th>${column}</th>`;
               } else {
-                tableHTML += `<td>${column}</td>`;
+                tableHTML += `<td>${format(column)}</td>`;
               }
             });
             tableHTML += '</tr>';
@@ -250,8 +261,11 @@ All data is also available on [our GitHub repository for analysis](https://githu
   }
 
   .file-name {
-    margin-left: 6px;
     font-style: italic;
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+    color: grey;
   }
 
   .file-header {
@@ -259,24 +273,30 @@ All data is also available on [our GitHub repository for analysis](https://githu
     align-items: center;
   }
 
+  .file-preview-header {
+    color: grey;
+  }
+
   .file-preview {
-    width: 80%;
-    max-width: 600px;
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
     border-collapse: collapse;
     margin: 20px;
+    margin-bottom: 8px;
+    margin-right: 0px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     background-color: #ffffff;
-    border: 2px solid #4caf50;
+    border: 2px solid #cc79a7;
     font-size: 12px;
   }
 
   .file-preview th, .file-preview td {
     padding: 8px;
     text-align: left;
-    border: 1px solid #4caf50;
+    border: 1px solid #cc79a7;
   }
 
   .file-preview th {
@@ -303,7 +323,7 @@ All data is also available on [our GitHub repository for analysis](https://githu
     left: 0;
     right: 0;
     height: 100px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
     pointer-events: none;
   }
 
