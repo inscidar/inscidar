@@ -25,3 +25,6 @@ defaults:
 
 plugins:
   - jekyll-feed
+
+exclude:
+  - archived
