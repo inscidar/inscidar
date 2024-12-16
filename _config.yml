@@ -27,4 +27,4 @@ plugins:
   - jekyll-feed
 
 exclude:
-  - archived
+  - */archived
