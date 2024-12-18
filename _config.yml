@@ -26,4 +26,4 @@ defaults:
 plugins:
   - jekyll-feed
 
-exclude: ['archived']
+exclude: ['_plots/archived']
