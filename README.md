@@ -1,4 +1,4 @@
-# Inclusive Science Data Accessibility Report
+# Interactive Science Data Accessibility Report
 
 This website showcases the results of the [Life Sciences Accessibility Evaluation](https://github.com/hms-dbmi/life-sciences-a11y-evaluation).
 
