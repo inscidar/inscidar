@@ -102,10 +102,6 @@ select {
   background-color: #f1f1f1;
 }
 
-.file-preview td {
-  color: #555555;
-}
-
 .file-preview-container {
   position: relative;
   width: fit-content;
