@@ -4,6 +4,7 @@ permalink: /data/
 layout: home
 ---
 
+<link rel="stylesheet" href="/assets/css/data.css">
 
 # Accessibility Data
 
@@ -109,9 +110,10 @@ All data is also available on [our GitHub repository for analysis](https://githu
         <div id="file-content-{{ date | slugify }}-{{ file.name | slugify }}" class="file-content" hidden>
           <p>{{ file-desc.desc }}</p>
           <div class="file-preview-header">File Preview (up to 4 rows):</div>
-          <table class="file-preview">
-          </table>
-          <div class="file-name"><code>{{ file.name }}</code></div>
+          <div class="file-preview-container">
+            <table class="file-preview"></table>
+          </div>
+          <div class="file-name"><code>{{ file.name }}</code></div> 
         </div>
       </li>
     {% endfor %}
@@ -130,6 +132,8 @@ All data is also available on [our GitHub repository for analysis](https://githu
 </ul>
 
 {% include cite.html %}
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.2/papaparse.min.js"></script>
 
 <script>
   const filenameDownload = document.getElementById('download-filename');
@@ -183,170 +187,30 @@ All data is also available on [our GitHub repository for analysis](https://githu
       fetch(filePath)
         .then(response => response.text())
         .then(csvText => {
-          const rows = csvText.split('\n').slice(0, 5); // max 5 rows
+          const parsed = Papa.parse(csvText.trim(), { header: false });
+          const rows = parsed.data.slice(0, 5); // max 5 rows
           const table = content.querySelector('table');
           let tableHTML = '';
           // we do not want to show the index column to save space
-          const firstColNull = rows[0]?.split(',')?.[0] === "";
+          const firstColNull = rows[0][0] === "";
           rows.forEach((row, rowIndex) => {
-            // to safely parse string values containing commas, replace commas with a predefined string
-            const COMMA_WITHIN_DOUBLE_QUOTE = '###COMMA###';
-            row = row.replace(/"(.*?)"/g, (str) => str.replaceAll(',', COMMA_WITHIN_DOUBLE_QUOTE));
-            const columns = row.split(',');
             tableHTML += '<tr>';
-            columns.forEach((column, colIndex) => {
-              // recover the commas within each column
-              column = column.replaceAll(COMMA_WITHIN_DOUBLE_QUOTE, ',');
+            row.forEach((column, colIndex) => {
               if(firstColNull && colIndex === 0) return;
               if (rowIndex === 0) {
-                tableHTML += `<th>${column}</th>`;
+                tableHTML += `<th scope="col">${column}</th>`;
               } else {
                 tableHTML += `<td>${format(column)}</td>`;
               }
             });
             tableHTML += '</tr>';
           });
-          
+
           table.innerHTML = tableHTML;
           content.setAttribute('data-loaded', 'true');
         })
         .catch(error => console.error('Error fetching CSV file:', error));
     }
+
   }
 </script>
-
-
-<style>
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-  }
-
-  .download-list {
-    padding: 0;
-    margin: 20px 0;
-  }
-
-  .download-item {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .download-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  select {
-    border: 1px solid #ddd;
-    font-size: 14px;
-  }
-
-  .toggle-button, .download-link {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    padding: 10px;
-  }
-
-  .toggle-button:hover, .toggle-button:focus, 
-  .download-link:hover, .download-link:focus {
-    outline: 3px solid #005fcc;
-  }
-
-  .file-name {
-    font-style: italic;
-    display: inline-block;
-    text-align: right;
-    width: 100%;
-    color: grey;
-  }
-
-  .file-header {
-    display: flex;
-    align-items: center;
-  }
-
-  .file-preview-header {
-    color: grey;
-  }
-
-  .file-preview {
-    width: calc(100% - 20px);
-    max-width: calc(100% - 20px);
-    border-collapse: collapse;
-    margin: 20px;
-    margin-bottom: 8px;
-    margin-right: 0px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #ffffff;
-    border: 2px solid #cc79a7;
-    font-size: 12px;
-  }
-
-  .file-preview th, .file-preview td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #cc79a7;
-  }
-
-  .file-preview th {
-    color: #333333;
-    font-weight: bold;
-  }
-
-  .file-preview tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  .file-preview tr:hover {
-    background-color: #f1f1f1;
-  }
-
-  .file-preview td {
-    color: #555555;
-  }
-
-  .file-preview::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
-    pointer-events: none;
-  }
-
-  .download-button {
-    display: inline-block;
-    padding: 10px 15px;
-    margin-top: 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  .download-button:hover {
-    background-color: #45a049;
-  }
-</style>
