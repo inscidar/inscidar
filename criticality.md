@@ -6,8 +6,9 @@ layout: home
 
 <link rel="stylesheet" href="/assets/css/data.css">
 
-# Criticality and Impact of AXE Issues
-For each AXE issue, we classified the impact and criticality based on it's WCAG level and difficulty to fix. 
+# Criticality of Accessibility Issues
+
+In our accessibility analysis, we used [Axe](https://github.com/dequelabs/axe-core) to collect the accessibility states of target web pages. To improve the interpretability of the issues defined by Axe for our study result analysis, we reviewed individual issues and assigned more informative categories, such as criticalities and potential impacts.
 
 
 <span class="file-title">issues.csv</span>
