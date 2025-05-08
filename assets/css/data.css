@@ -78,11 +78,11 @@ select {
   font-weight: bold;
 }
 
-.file-preview tr:nth-child(even) {
+.file-preview tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
-.file-preview tr:hover {
+.file-preview tr:hover > * {
   background-color: #f1f1f1;
 }
 
@@ -90,7 +90,12 @@ select {
   color: #555555;
 }
 
-.file-preview::after {
+.file-preview-container {
+  position: relative;
+  width: fit-content;
+}
+
+.file-preview-container::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -99,10 +104,6 @@ select {
   height: 100px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%);
   pointer-events: none;
-}
-
-.file-preview-container .file-preview::after {
-  display: none; /* no gradient overlay for issue table */
 }
 
 .download-button {

@@ -16,7 +16,7 @@ For each AXE issue, we classified the impact and criticality based on it's WCAG 
   <img src="{{ '/assets/icons/download.svg' | relative_url }}" alt="Download issues.csv" width="24" height="24">
 </a>
 
-<div id="issues-table" class="file-preview-container" tabindex="-1">
+<div id="issues-table" tabindex="-1">
   <table class="file-preview"></table>
 </div>
 

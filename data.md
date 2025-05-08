@@ -102,8 +102,9 @@ All data is also available on [our GitHub repository for analysis](https://githu
           </a>
         </div>
         <div id="file-content-{{ date | slugify }}-{{ file.name | slugify }}" class="file-content" hidden>
-          <table class="file-preview">
-          </table>
+          <div class="file-preview-container">
+            <table class="file-preview"></table>
+          </div>
         </div>
       </li>
     {% endfor %}
@@ -173,24 +174,42 @@ Sehi L'Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía
           const parsed = Papa.parse(csvText.trim(), { header: false });
           const rows = parsed.data.slice(0, 5); // max 5 rows
           const table = content.querySelector('table');
-          let tableHTML = '';
-          
-          rows.forEach((row, rowIndex) => {
-            tableHTML += '<tr>';
-            row.forEach(column => {
-              if (rowIndex === 0) {
-                tableHTML += `<th scope="col">${column}</th>`;
-              } else {
-                tableHTML += `<td>${column}</td>`;
-              }
-            });
-            tableHTML += '</tr>';
+
+          // head
+          const thead = table.createTHead();
+          const headerRow = thead.insertRow();
+          rows[0].forEach(header => {
+            const th = document.createElement('th');
+            th.textContent = header;
+            th.scope = "col";
+            headerRow.appendChild(th);
           });
-          
-          table.innerHTML = tableHTML;
+
+          // body
+          const tbody = table.createTBody();
+          rows.slice(1).forEach(row => {
+            const tr = tbody.insertRow();
+            row.forEach((cell, columnIndex) => {
+              const td = document.createElement('td');
+
+              if (columnIndex === 10 && typeof cell === 'string' && cell.startsWith('http')) {
+                const a = document.createElement('a');
+                a.href = cell;
+                a.setAttribute('aria-label', 'Visit Deque University explanation');
+                a.tabIndex = 0;
+                a.textContent = cell;
+                td.appendChild(a);
+              } else {
+                td.textContent = cell;
+              }
+              tr.appendChild(td);
+            });
+          });
+
           content.setAttribute('data-loaded', 'true');
         })
         .catch(error => console.error('Error fetching CSV file:', error));
     }
+
   }
 </script>
