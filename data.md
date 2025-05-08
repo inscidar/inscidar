@@ -12,7 +12,6 @@ This page showcases the data of the accessibility analyses and allows for easy d
 
 All data is also available on [our GitHub repository for analysis](https://github.com/hms-dbmi/life-sciences-a11y-evaluation). 
 
-
 <!-- Retrieve all unique dates -->
 {% assign csv_files_all = site.static_files | where_exp: "file", "file.path contains '/assets/csv' and file.extname == '.csv'" %}
 {% assign file_paths = csv_files_all | map: "path" %}
@@ -34,6 +33,8 @@ All data is also available on [our GitHub repository for analysis](https://githu
 {% endfor %}
 {% assign unique_filenames = unique_filenames | split: " + " | shift | uniq | sort %}
 
+
+{% assign analysis-files = site.data.analysis-files %}
 
 ## Download in batch
 <ul class="download-list">
@@ -80,7 +81,6 @@ All data is also available on [our GitHub repository for analysis](https://githu
   </li>
 </ul>
 
-
 ## View single analyses
 <!-- list files for each unique date -->
 {% for date in unique_dates %}
@@ -95,16 +95,25 @@ All data is also available on [our GitHub repository for analysis](https://githu
             <span class="visually-hidden">Expand section for {{ file.name }}</span>
             <img id="icon-{{ date | slugify }}-{{ file.name | slugify }}" src="{{ '/assets/icons/triangle-right.svg' | relative_url }}" alt="Expand section for {{ file.name }}" width="16" height="16">
           </button>
-          <span class="file-title">{{ file.name }}</span>
+          {% assign file-descs = analysis-files | where: 'file', file.name %}
+          {% if file-descs.size > 0 %}
+          {% assign file-desc = file-descs[0] %}
+          {% else %}
+          {% assign file-desc = '' %}
+          {% endif %}
+          <span class="file-title">{{ file-desc.name | default: file.name }}</span>
           <a href="{{ file.path | relative_url }}" download class="download-link" tabindex=0>
             <span class="visually-hidden">Download {{ file.name }}</span>
             <img src="{{ '/assets/icons/download.svg' | relative_url }}" alt="Download {{ file.name }}" width="24" height="24">
           </a>
         </div>
         <div id="file-content-{{ date | slugify }}-{{ file.name | slugify }}" class="file-content" hidden>
+          <p>{{ file-desc.desc }}</p>
+          <div class="file-preview-header">File Preview (up to 4 rows):</div>
           <div class="file-preview-container">
             <table class="file-preview"></table>
           </div>
+          <div class="file-name"><code>{{ file.name }}</code></div> 
         </div>
       </li>
     {% endfor %}
@@ -113,21 +122,19 @@ All data is also available on [our GitHub repository for analysis](https://githu
 
 ## Summary Visualizations
 
-<div class='plots'>
+<ul class='plots'>
   {% assign plots = site.plots %}
   {% for plot in plots %}
-  <a href='{{ plot.url | relative_url }}'>
+  <li><a href='{{ plot.url | relative_url }}'>
     {{ plot.title }}
-  </a>
+  </a></li>
   {% endfor %}
-</div>
+</ul>
 
 
 ## Publications
 
 Sehi L'Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía Rojas, Alexander Lex, Nils Gehlenborg. A comprehensive evaluation of life sciences data resources reveals significant accessibility barriers, OSF Preprints, [10.31219/osf.io/5v98j](https://doi.org/10.31219/osf.io/5v98j)
-
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.2/papaparse.min.js"></script>
 
 <script>
   const filenameDownload = document.getElementById('download-filename');
@@ -165,47 +172,48 @@ Sehi L'Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía
     icon.src = isExpanded 
       ? "{{ '/assets/icons/triangle-right.svg' | relative_url }}" 
       : "{{ '/assets/icons/triangle-down.svg' | relative_url }}";
-    
+   
+    // format values of each cell in the table
+    const format = (str) => {
+      if(+str && +str % 1 !== 0) {
+        // float, e.g., str is "3.1429"
+        return (+str).toFixed(3);
+      } else {
+        return str;
+      }
+    }
+
     // check if expanded, else, fetch content
     if (!isExpanded && !content.getAttribute('data-loaded')) {
       fetch(filePath)
         .then(response => response.text())
         .then(csvText => {
-          const parsed = Papa.parse(csvText.trim(), { header: false });
-          const rows = parsed.data.slice(0, 5); // max 5 rows
+          const rows = csvText.split('\n').slice(0, 5); // max 5 rows
           const table = content.querySelector('table');
-
-          // head
-          const thead = table.createTHead();
-          const headerRow = thead.insertRow();
-          rows[0].forEach(header => {
-            const th = document.createElement('th');
-            th.textContent = header;
-            th.scope = "col";
-            headerRow.appendChild(th);
-          });
-
-          // body
-          const tbody = table.createTBody();
-          rows.slice(1).forEach(row => {
-            const tr = tbody.insertRow();
-            row.forEach((cell, columnIndex) => {
-              const td = document.createElement('td');
-
-              if (columnIndex === 10 && typeof cell === 'string' && cell.startsWith('http')) {
-                const a = document.createElement('a');
-                a.href = cell;
-                a.setAttribute('aria-label', 'Visit Deque University explanation');
-                a.tabIndex = 0;
-                a.textContent = cell;
-                td.appendChild(a);
+          let tableHTML = '';
+          // we do not want to show the index column to save space
+          const firstColNull = rows[0]?.split(',')?.[0] === "";
+          rows.forEach((row, rowIndex) => {
+            // to safely parse string values containing commas, replace commas with a predefined string
+            const COMMA_WITHIN_DOUBLE_QUOTE = '###COMMA###';
+            row = row.replace(/"(.*?)"/g, (str) => str.replaceAll(',', COMMA_WITHIN_DOUBLE_QUOTE));
+            const columns = row.split(',');
+            tableHTML += '<tr>';
+            columns.forEach((column, colIndex) => {
+              // recover the commas within each column
+              column = column.replaceAll(COMMA_WITHIN_DOUBLE_QUOTE, ',');
+              if(firstColNull && colIndex === 0) return;
+              if (rowIndex === 0) {
+                tableHTML += `<th>${column}</th>`;
               } else {
-                td.textContent = cell;
+                tableHTML += `<td>${format(column)}</td>`;
               }
-              tr.appendChild(td);
+              
             });
+            tableHTML += '</tr>';
           });
 
+          table.innerHTML = tableHTML;
           content.setAttribute('data-loaded', 'true');
         })
         .catch(error => console.error('Error fetching CSV file:', error));

@@ -5,5 +5,5 @@ plot: "plots/top-issues.json"
 plot_id: 'top-issues'
 ---
 
-This visualization shows the most common accessibility issues identified from data portals and journal websites.
+This visualization shows the top 10 most frequently observed accessibility issues from two resources: data portals (top) and journal websites (bottom).
 

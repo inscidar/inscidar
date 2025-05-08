@@ -8,17 +8,22 @@ layout: home
 
 <h2>{{ page.title }}</h2>
 
-{{ content }}
+<div class="plot-caption">
+  <p>{{ content }}</p>
+</div>
 
-<div id='{{ plot_id }}' />
+<div id='{{ plot_id }}'></div>
+
+{% include cite.html %}
 
 <script type="text/javascript">
 
   const plot = "{{plot_full_path}}";
 
   const vegaOptions = {
-    renderer: "canvas",
+    renderer: "svg",
     actions: true,
+    responsive: true,
   };
 
   window.onload = () => {

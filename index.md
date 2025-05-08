@@ -28,33 +28,8 @@ title: Home
 
 <a href="https://github.com/hms-dbmi/life-sciences-a11y-evaluation">The Analysis GitHub Repository</a>
 
-<!--
-<div id='visual-statistics'>
-    <div id='statistics-num-pages'></div>
-    <div></div>
-</div>
+## Funding
 
-## Publications
+This study was in part funded by NIH grants <a href="https://reporter.nih.gov/project-details/10452031">R01HG011773</a> and <a href="https://reporter.nih.gov/project-details/10984200">K99HG013348</a>.
 
-Sehi L’Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía Rojas, Alexander Lex, Nils Gehlenborg.
-A comprehensive evaluation of life sciences data resources reveals significant accessibility barriers,
-OSF Preprints, 10.31219/osf.io/5v98j
-
-<script type="text/javascript">
-
-    const numPages = "{{ "/assets/plots/statistics-num-pages.json" | relative_url }}";
-    
-    const vegaOptions = {
-        renderer: "canvas",
-        actions: true,
-    };
-
-    window.onload = () => {
-        vegaEmbed(
-            `#statistics-num-pages`,
-            numPages,
-            vegaOptions
-        );
-    }
-</script>
--->
+{% include cite.html %}
