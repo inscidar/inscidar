@@ -20,18 +20,44 @@ For each AXE issue, we classified the impact and criticality based on it's WCAG 
   <table class="file-preview"></table>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.2/papaparse.min.js"></script>
 
 <script>
   fetch('/assets/issues.csv')
     .then(response => response.text())
     .then(csvText => {
-      const rows = csvText.trim().split('\n')
-      const table = document.createElement('table');
+      const parsed = Papa.parse(csvText.trim(), { header: false });
+      const rows = parsed.data;
+      const table = document.querySelector('table');
 
-      let tableHTML = '';
+      // not using innerHTML because some of the file cells have HTML tags that are not escaped
+      // header
+      const thead = table.createTHead();
+      const headerRow = thead.insertRow();
+      rows[0].forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header;
+        headerRow.appendChild(th);
+      });
 
-      table.innerHTML = tableHTML;
+      // body
+      const tbody = table.createTBody();
+      rows.slice(1).forEach(row => {
+        const tr = tbody.insertRow();
+        row.forEach((cell, columnIndex) => {
+          const td = document.createElement('td');
 
-      document.getElementById('issues-table').appendChild(table);
+          if (columnIndex === 10 && cell.startsWith('http')) {
+            const a = document.createElement('a');
+            a.href = cell;
+            a.textContent = cell;
+            td.appendChild(a);
+          } else {
+            td.textContent = cell;
+          }
+
+          tr.appendChild(td);
+        });
+      });
     }).catch(error => console.error('Error fetching CSV file:', error));
 </script>

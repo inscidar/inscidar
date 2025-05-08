@@ -102,6 +102,10 @@ select {
   pointer-events: none;
 }
 
+.file-preview-container .file-preview::after {
+  display: none; /* no gradient overlay for issue table */
+}
+
 .download-button {
   display: inline-block;
   padding: 10px 15px;
