@@ -16,7 +16,7 @@ For each AXE issue, we classified the impact and criticality based on it's WCAG 
   <img src="{{ '/assets/icons/download.svg' | relative_url }}" alt="Download issues.csv" width="24" height="24">
 </a>
 
-<div id="issues-table" class="file-preview-container">
+<div id="issues-table" class="file-preview-container" tabindex="-1">
   <table class="file-preview"></table>
 </div>
 
@@ -30,6 +30,10 @@ For each AXE issue, we classified the impact and criticality based on it's WCAG 
       const rows = parsed.data;
       const table = document.querySelector('table');
 
+      const caption = document.createElement('caption');
+      caption.textContent = 'AXE Issues Table: Criticality and Impact';
+      table.prepend(caption);
+
       // not using innerHTML because some of the file cells have HTML tags that are not escaped
       // header
       const thead = table.createTHead();
@@ -37,6 +41,7 @@ For each AXE issue, we classified the impact and criticality based on it's WCAG 
       rows[0].forEach(header => {
         const th = document.createElement('th');
         th.textContent = header;
+        th.scope = "col";
         headerRow.appendChild(th);
       });
 
@@ -50,6 +55,8 @@ For each AXE issue, we classified the impact and criticality based on it's WCAG 
           if (columnIndex === 10 && cell.startsWith('http')) {
             const a = document.createElement('a');
             a.href = cell;
+            a.setAttribute('aria-label', 'Visit Deque University explanation');
+            a.tabIndex = 0
             a.textContent = cell;
             td.appendChild(a);
           } else {
@@ -60,4 +67,6 @@ For each AXE issue, we classified the impact and criticality based on it's WCAG 
         });
       });
     }).catch(error => console.error('Error fetching CSV file:', error));
+
+    document.getElementById('issues-table').focus();
 </script>

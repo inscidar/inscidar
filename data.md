@@ -179,7 +179,7 @@ Sehi L'Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía
             tableHTML += '<tr>';
             row.forEach(column => {
               if (rowIndex === 0) {
-                tableHTML += `<th>${column}</th>`;
+                tableHTML += `<th scope="col">${column}</th>`;
               } else {
                 tableHTML += `<td>${column}</td>`;
               }
