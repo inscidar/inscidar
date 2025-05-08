@@ -126,6 +126,8 @@ All data is also available on [our GitHub repository for analysis](https://githu
 
 Sehi L'Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía Rojas, Alexander Lex, Nils Gehlenborg. A comprehensive evaluation of life sciences data resources reveals significant accessibility barriers, OSF Preprints, [10.31219/osf.io/5v98j](https://doi.org/10.31219/osf.io/5v98j)
 
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.2/papaparse.min.js"></script>
+
 <script>
   const filenameDownload = document.getElementById('download-filename');
   const filenameSelect = document.getElementById('filename');
@@ -168,14 +170,14 @@ Sehi L'Yi, Harrison G Zhang, Andrew P Mar, Thomas C Smits, Lawrence Weru, Sofía
       fetch(filePath)
         .then(response => response.text())
         .then(csvText => {
-          const rows = csvText.split('\n').slice(0, 5); // max 5 rows
+          const parsed = Papa.parse(csvText.trim(), { header: false });
+          const rows = parsed.data.slice(0, 5); // max 5 rows
           const table = content.querySelector('table');
           let tableHTML = '';
           
           rows.forEach((row, rowIndex) => {
-            const columns = row.split(',');
             tableHTML += '<tr>';
-            columns.forEach(column => {
+            row.forEach(column => {
               if (rowIndex === 0) {
                 tableHTML += `<th>${column}</th>`;
               } else {
