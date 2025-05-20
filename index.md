@@ -5,7 +5,7 @@ title: Home
 
 <div class='title-panel'>
 <div class='title'>
-    Inclusive Science Data Accessibility Report
+    Interactive Science Data Accessibility Report
 </div>
 <div class='subtitle'>
     <dfn>INSCIDAR</dfn> (pronounced "insider") is an open platform to share and communicate the digital accessibility states of life sciences data resources. We perform accessibility evaluation regularly and share evaluation results in the form of data, online reports, and research publications. Our mission is to increase the accessibility of life sciences data resources, lowering barriers for people with disabilities to join the life sciences workforce.
