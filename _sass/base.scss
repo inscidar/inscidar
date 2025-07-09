@@ -172,6 +172,10 @@ footer {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 header>nav,
 .content {
   max-width: $content-width;
@@ -270,25 +274,29 @@ header>nav,
   }
 }
 
-.team {
+table {
   width: 100%;
 }
 
-.team,
-.team th,
-.team td {
+table,
+table th,
+table td {
   border: 1px solid lightgrey;
   border-collapse: collapse;
-  text-align: center;
 }
 
-.team th {
+table,
+table th,
+table td,
+table caption {
+  text-align: left;
+}
+
+table th {
   background: #f9f9f9;
-  text-transform: uppercase;
 }
 
-.team th,
-.team td {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+table th,
+table td {
+  padding: 0.5rem;
 }
