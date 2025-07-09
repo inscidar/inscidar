@@ -100,7 +100,7 @@ The protocol of the manual evaluation was reviewed by the Institutional Review B
 ## Results
 ### Most common accessibility issues
 <figure>
-<img src="https://github.com/user-attachments/assets/03675c01-4bda-4030-92de-88c74143ed76" alt="Two subfigures. On the top, three histograms are shown for Data Portals, Journal Websites, and US Government Websites. On the bottom, a dot plot is shown for three resource types."/>
+<img src="{{ "/assets/papers/2025-analysis-figure-1.png" | relative_url }}" alt="Two subfigures. On the top, three histograms are shown for Data Portals, Journal Websites, and US Government Websites. On the bottom, a dot plot is shown for three resource types."/>
 <figcaption><strong>Fig. 1: Accessibility issues found on life sciences websites.</strong> Proportion of pages with issues in terms of their (A) overall impact, (B) criticality, i.e., whether the issue is likely to block users performing tasks entirely, (C) whether they are related to the perception of and interaction with data (e.g., issues in tables), (D) WCAG levels[^25], and (E) difficulty to fix in post-deployment (e.g., using browser extensions to work around accessibility issues in already deployed websites); (F) Top 10 most frequently observed accessibility issues. The proportion of pages with (G) missing labels and (H) image-related and table-related issues.</figcaption>
 </figure>
 
@@ -110,7 +110,7 @@ Since life sciences data and information are frequently represented in images an
 
 ### Current state of life sciences website accessibility
 <figure>
-<img src="https://github.com/user-attachments/assets/0ee69d82-f039-4745-9162-56e70e9bba0c" alt="Eight subfigures show bar charts and pie charts. Subpanel A shows the proportion of pages with the overall impact of issues between the two resource types, i.e., data portals and journal websites. Subpanels B and C show the proportion of pages with critical issues and data-related issues, respectively, in pie charts. Subpanels D and E are bar charts showing the proportion of pages by WCAG levels and the difficulty of fixing in post-deployment. Subpanel F shows the top 10 accessibility issues. Subpanel G shows the proportion of pages with missing labels, and subpanel H shows the proportion of issues related to images and tables."/>
+<img src="{{ "/assets/papers/2025-analysis-figure-2.png" | relative_url }}" alt="Eight subfigures show bar charts and pie charts. Subpanel A shows the proportion of pages with the overall impact of issues between the two resource types, i.e., data portals and journal websites. Subpanels B and C show the proportion of pages with critical issues and data-related issues, respectively, in pie charts. Subpanels D and E are bar charts showing the proportion of pages by WCAG levels and the difficulty of fixing in post-deployment. Subpanel F shows the top 10 accessibility issues. Subpanel G shows the proportion of pages with missing labels, and subpanel H shows the proportion of issues related to images and tables."/>
 <figcaption><strong>Fig. 2: The failure rates of data portals, journal websites, and US government websites.</strong> (A) The distribution of failure rates of individual web pages is shown in histograms. The y-axis represents the number of web pages with the corresponding failure rates (x-axis). The x-axis is truncated to 50% failure rates to make the distributions readable in the charts. There were 46 web pages with failure rates higher than 50% (32 data portals, 9 journals, and 5 US government websites). The median failure rate of the US government websites (1.1%) is drawn as dotted vertical lines for a standard reference. (B) The estimated failure rates of three groups of websites based on statistical analysis (refer to the Methods section) are shown in dot plots. The error bars represent the 95% confidence intervals. The failure rate is a metric that measures the accessibility issues of a website while considering its size. For example, a failure rate of 50% indicates that of all possible accessibility issues, a site actually fails on 50% of the issues (refer to the Methods section).</figcaption>
 </figure>
 
@@ -120,7 +120,7 @@ In summary, life sciences websites significantly fail to meet accessibility stan
 ### Factors influencing accessibility issues
 #### Hosting institutions
 <figure>
-<img src="https://github.com/user-attachments/assets/dd01f712-63a8-403f-beb1-4529be517c96" alt="Three subfigures, all showing dot plots for data portals and journal websites. Subpanel A shows the estimated failure rate of hosting organizations. Subpanels B and C show the estimated failure rate by country and continent."/>
+<img src="{{ "/assets/papers/2025-analysis-figure-3.png" | relative_url }}" alt="Three subfigures, all showing dot plots for data portals and journal websites. Subpanel A shows the estimated failure rate of hosting organizations. Subpanels B and C show the estimated failure rate by country and continent."/>
 <figcaption><strong>Fig. 3: The estimated failure rates of data portals and journal websites grouped by their (A) hosting institutions and publishers, respectively, (B) countries, and (C) continents.</strong> (A) The error bars represent the 95% confidence intervals. The numeric values inside brackets in the y-axis represent the sample size n of the corresponding groups. The US government websites' median failure rate (1.1%) is drawn as vertical dashed lines for reference. Only the top 10 hosting institutions (out of 141 for data portals and 121 journals) and the top 10 countries (out of 35 for data portals and 66 for journals) with the largest sample sizes (n) are shown.</figcaption>
 </figure>
 
@@ -131,7 +131,7 @@ Despite the notable differences between life sciences data portals and journal w
 
 ### Real-world impact of accessibility issues
 <figure>
-<img src="https://github.com/user-attachments/assets/088da0c3-947c-4dc5-8f5c-acc266be6086" alt="Four subpanels show the results of the manual accessibility evaluation, showing the time taken for each of the 10 tasks and subjective responses on confidence, satisfaction, and frustration levels. The first subpanel shows the summary of the results for three data portals, while the rest show the individual results for the data portals."/>
+<img src="{{ "/assets/papers/2025-analysis-figure-4.png" | relative_url }}" alt="Four subpanels show the results of the manual accessibility evaluation, showing the time taken for each of the 10 tasks and subjective responses on confidence, satisfaction, and frustration levels. The first subpanel shows the summary of the results for three data portals, while the rest show the individual results for the data portals."/>
 <figcaption><strong>Fig. 4: Results of manual evaluation of three data portals[^30] [^31] [^32] with a blind screen reader user.</strong> The user performed ten typical tasks on each data portal and gave subjective scores about their confidence, satisfaction, and frustration levels for each task. (A) The three results are aggregated with mean completion time and subjective responses, where error bars represent standard deviation. (B–D) Individual results of three data portals are shown: (B) cBioPortal[^30], (C) ENCODE Data Portal[^32], and (D) HuBMAP Data Portal[^31]. The HuBMAP Data Portal is developed and maintained by the research group led by the senior author of this paper. Note that the purpose of the manual evaluation is not to compare data portals but instead to understand how accessibility issues identified by computational approaches influence the actual use cases.</figcaption>
 </figure>
 
@@ -186,15 +186,15 @@ N.G. and A.L. are co-founders and equity owners of Datavisyn. The HuBMAP Data Po
 S.L. conducted the computational accessibility evaluation. T.S. and S.R. curated data for the evaluation. H.Z. performed statistical analysis on the computational evaluation results. S.L., A.M., L.W., and S.R. conducted the manual evaluation of selected data portals. S.L. and T.S. implemented the website. A.L. and N.G. conceived and supervised the project. The draft manuscript was written by S.L., and all authors edited and gave feedback on the manuscript.
 
 ## References
-[^1]: Swenor, B. & Meeks, L. M. Disability Inclusion — Moving Beyond Mission Statements. New England Journal of Medicine vol. 380 2089–2091 Preprint at https://doi.org/10.1056/nejmp1900348 (2019).
-[^2]: Andrisse, S. et al. Advisory Committee to the Director Working Group on Diversity membership. Preprint at https://acd.od.nih.gov/documents/presentations/02142021_DiversityReport.pdf (2022).
+[^1]: Swenor, B. & Meeks, L. M. Disability Inclusion — Moving Beyond Mission Statements. New England Journal of Medicine vol. 380 2089–2091 Preprint at [https://doi.org/10.1056/nejmp1900348](https://doi.org/10.1056/nejmp1900348) (2019).
+[^2]: Andrisse, S. et al. Advisory Committee to the Director Working Group on Diversity membership. Preprint at [https://acd.od.nih.gov/documents/presentations/02142021_DiversityReport.pdf](https://acd.od.nih.gov/documents/presentations/02142021_DiversityReport.pdf) (2022).
 [^3]: Building a Diverse Genomics Workforce: An NHGRI Action Agenda. Preprint at (2021).
 [^4]: Swenor, B. K., Munoz, B. & Meeks, L. M. A decade of decline: Grant funding for researchers with disabilities 2008 to 2018. PLoS One 15, e0228686 (2020).
 [^5]: Campanile, J. et al. Accessibility and disability inclusion among top-funded U.S. Undergraduate Institutions. PLoS One 17, e0277249 (2022).
 [^6]: Tenopir, C. et al. Data sharing by scientists: practices and perceptions. PLoS One 6, e21101 (2011).
-[^7]: WebAIM. Survey of Users with Low Vision #2 Results. Preprint at https://webaim.org/blog/low-vision-survey2-results/ (2018).
-[^8]: NVDA: a free, open source, globally accessible screen reader for the blind and vision impaired. NV Access https://www.nvaccess.org/.
-[^9]: JAWS: the world’s most popular screen reader. Freedom Scientific https://www.freedomscientific.com/products/software/jaws/.
+[^7]: WebAIM. Survey of Users with Low Vision #2 Results. Preprint at [https://webaim.org/blog/low-vision-survey2-results/](https://webaim.org/blog/low-vision-survey2-results/) (2018).
+[^8]: NVDA: a free, open source, globally accessible screen reader for the blind and vision impaired. NV Access [https://www.nvaccess.org/](https://www.nvaccess.org/).
+[^9]: JAWS: the world’s most popular screen reader. Freedom Scientific [https://www.freedomscientific.com/products/software/jaws/](https://www.freedomscientific.com/products/software/jaws/).
 [^10]: Campoverde-Molina, M., Luján-Mora, S. & García, L. V. Empirical Studies on Web Accessibility of Educational Websites: A Systematic Literature Review. IEEE Access 8, 91676–91700 (2020).
 [^11]: Hackett, S., Parmanto, B. & Zeng, X. A retrospective look at website accessibility over time. Behav. Inf. Technol. 24, 407–417 (2005).
 [^12]: Ismail, A. & Kuppusamy, K. S. Accessibility of Indian universities’ homepages: An exploratory study. J. King Saud Univ. - Comput. Inf. Sci. 30, 268–278 (2018).
@@ -204,12 +204,12 @@ S.L. conducted the computational accessibility evaluation. T.S. and S.R. curated
 [^16]: Joanne M. Kuzma, Dorothy Yen, Klaus Oestreicher. Global E-Government Web Accessibility: Empirical Examination EU, Asian African Sites.
 [^17]: Section 508 of the Rehabilitation Act, 29 U.S.C. § 794d. Preprint at (1998).
 [^18]: Vigo, M., Brown, J. & Conway, V. Benchmarking web accessibility evaluation tools: measuring the harm of sole reliance on automated tests. in Proceedings of the 10th International Cross-Disciplinary Conference on Web Accessibility 1–10 (Association for Computing Machinery, New York, NY, USA, 2013).
-[^19]: Database Commons a catalog of worldwide biological databases. Database Commons https://ngdc.cncb.ac.cn/databasecommons/browse.
+[^19]: Database Commons a catalog of worldwide biological databases. Database Commons [https://ngdc.cncb.ac.cn/databasecommons/browse](https://ngdc.cncb.ac.cn/databasecommons/browse).
 [^20]: SCImago. Scimago Journal & Country Rank [Portal]. SJR http://www.scimagojr.com.
-[^21]: Cybersecurity and Infrastructure Security Agency. A repository that contains the official, full list of registered domains in the .gov zone. .gov data https://github.com/cisagov/dotgov-data.
-[^22]: Deque Systems, Inc. axe: digital accessibility testing tools. axe: digital accessibility testing tools https://www.deque.com/axe/.
+[^21]: Cybersecurity and Infrastructure Security Agency. A repository that contains the official, full list of registered domains in the .gov zone. .gov data [https://github.com/cisagov/dotgov-data](https://github.com/cisagov/dotgov-data).
+[^22]: Deque Systems, Inc. axe: digital accessibility testing tools. axe: digital accessibility testing tools [https://www.deque.com/axe/](https://www.deque.com/axe/).
 [^23]: Pool, J. R. Accessibility metatesting: Comparing nine testing tools. arXiv [cs.HC] (2023).
-[^24]: US Government. Section508 of the Rehabilitation Act. Section508 https://www.section508.gov/.
+[^24]: US Government. Section508 of the Rehabilitation Act. Section508 [https://www.section508.gov/](https://www.section508.gov/).
 [^25]: Web Content Accessibility Guidelines (WCAG) 2.1. https://www.w3.org/TR/WCAG21/.
 [^26]: Martins, B. & Duarte, C. Large-scale study of web accessibility metrics. Univers. Access Inf. Soc. 23, 411–434 (2024).
 [^27]: VanderPlas, J. et al. Altair: Interactive statistical visualizations for python. J. Open Source Softw. 3, 1057 (2018).
@@ -219,16 +219,16 @@ S.L. conducted the computational accessibility evaluation. T.S. and S.R. curated
 [^31]: HuBMAP Consortium. The human body at cellular resolution: the NIH Human Biomolecular Atlas Program. Nature 574, 187–192 (2019).
 [^32]: Davis, C. A. et al. The Encyclopedia of DNA elements (ENCODE): data portal update. Nucleic Acids Res. 46, D794–D801 (2018).
 [^33]: Nielsen, Norman Group. How to Conduct Usability Studies for Accessibility. (Sams Publishing, Indianapolis, IN, 1999).
-[^34]: Common Fund Data Ecosystem. CFDE Use Case Library. CFDE Use Case Library https://use-cases.nih-cfde.org.
+[^34]: Common Fund Data Ecosystem. CFDE Use Case Library. CFDE Use Case Library [https://use-cases.nih-cfde.org](https://use-cases.nih-cfde.org).
 [^35]: Kanehisa, M. & Goto, S. KEGG: kyoto encyclopedia of genes and genomes. Nucleic Acids Res. 28, 27–30 (2000).
-[^36]: WebAIM. The WebAIM Million. WebAIM: Web Accessibility In Mind https://webaim.org/projects/million/ (2023).
+[^36]: WebAIM. The WebAIM Million. WebAIM: Web Accessibility In Mind [https://webaim.org/projects/million/](https://webaim.org/projects/million/) (2023).
 [^37]: Van Loon, J. & McCann, S. Enhancing accessibility in STEM: a survey of accessibility errors in STEM academic databases. J. Electron. Resour. Librariansh. 36, 190–202 (2024).
 [^38]: Liu, Y., Bielefield, A. & Beckwith, J. ADA digital accessibility on academic library websites. Coll. Res. Libr. 85, (2024).
 [^39]: Southwell, K. L. & Slater, J. An evaluation of finding aid accessibility for screen readers. Inf. Technol. Libr. 32, 34 (2013).
 [^40]: Sarsenbayeva, Z., van Berkel, N., Velloso, E., Goncalves, J. & Kostakos, V. Methodological standards in accessibility research on motor impairments: A survey. ACM Comput. Surv. 55, 1–35 (2023).
 [^41]: Mulliken, A. Eighteen blind library users’ experiences with library websites and search tools in U.s. academic libraries: A qualitative study. Coll. Res. Libr. 80, 152–158 (2018).
 [^42]: Boellstorff, T. Coming of Age in Second Life: An Anthropologist Explores the Virtually Human. (Princeton University Press, 2015).
-[^43]: International Research on Web Accessibility for Persons With Disabilities. https://staff.washington.edu/tft/research/international/.
+[^43]: International Research on Web Accessibility for Persons With Disabilities. [https://staff.washington.edu/tft/research/international/](https://staff.washington.edu/tft/research/international/).
 [^44]: Kimmons, R. Open to all? Nationwide evaluation of high-priority web accessibility considerations among higher education websites. J. Comput. High. Educ. 29, 434–450 (2017).
 [^45]: Iannuzzi, N., Manca, M., Paternò, F. & Santoro, C. Large scale automatic web accessibility validation. in Proceedings of the 2023 ACM Conference on Information Technology for Social Good 307–314 (ACM, New York, NY, USA, 2023).
 [^46]: Martins, B. & Duarte, C. A large-scale web accessibility analysis considering technology adoption. Univers. Access Inf. Soc. 23, 1857–1872 (2024).
@@ -236,6 +236,6 @@ S.L. conducted the computational accessibility evaluation. T.S. and S.R. curated
 [^48]: Rømen, D. & Svanæs, D. Validating WCAG versions 1.0 and 2.0 through usability testing with disabled users. Univers. Access Inf. Soc. 11, 375–385 (2012).
 [^49]: Fan, D. et al. The Accessibility of Data Visualizations on the Web for Screen Reader Users: Practices and Experiences During COVID-19. ACM Trans. Access. Comput. 16, 1–29 (2023).
 [^50]: Bi, T. et al. Accessibility in software practice: A practitioner’s perspective. ACM Trans. Softw. Eng. Methodol. 31, 1–26 (2022).
-[^51]: European Bioinformatics Institute. Accessibility guidelines of Visual Framework. https://stable.visual-framework.dev/guidance/accessibility/.
-[^52]: Stack Whitney, K., Perrone, J. & Bahlai, C. A. Open access journals lack image accessibility considerations in author guidelines. BITSS (2022) doi:10.31222/osf.io/zsjqw.
-[^53]: Elavsky, Bennett & Moritz. How accessible is my visualization? Evaluating visualization accessibility with Chartability. Comput. Graph. Forum (2022) doi:10.1111/cgf14522/v41i3pp057-070.
+[^51]: European Bioinformatics Institute. Accessibility guidelines of Visual Framework. [https://stable.visual-framework.dev/guidance/accessibility/](https://stable.visual-framework.dev/guidance/accessibility/).
+[^52]: Stack Whitney, K., Perrone, J. & Bahlai, C. A. Open access journals lack image accessibility considerations in author guidelines. BITSS (2022) [doi:10.31222/osf.io/zsjqw](https://doi.org/10.31222/osf.io/zsjqw).
+[^53]: Elavsky, Bennett & Moritz. How accessible is my visualization? Evaluating visualization accessibility with Chartability. Comput. Graph. Forum (2022) [doi:10.1111/cgf14522/v41i3pp057-070](https://doi.org/10.1111/cgf14522/v41i3pp057-070).
