@@ -1,7 +1,7 @@
 ---
 title: Paper
-permalink: /paper/
-layout: home
+permalink: /paper-2025/
+layout: paper 
 ---
 
 <link rel="stylesheet" href="/assets/css/data.css">
