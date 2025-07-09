@@ -4,7 +4,10 @@ permalink: /paper/
 layout: home
 ---
 
+<link rel="stylesheet" href="/assets/css/data.css">
+
 # A comprehensive evaluation of life sciences data resources reveals significant accessibility barriers
+
 Sehi L’Yi [1], Harrison G. Zhang [2], Andrew P. Mar [1,3], Thomas C. Smits [1], Lawrence Weru [1], Sofía Rojas [1], Alexander Lex [4], Nils Gehlenborg [1]
 
 [1] Harvard Medical School, MA, USA
@@ -37,7 +40,7 @@ As a result, we selected a total of 3,112 data portals and 5,009 journal website
 
 <table>
   <caption>
-    <string>Table 1. A list of categories we assigned to individual Axe accessibility issues.</string> We reviewed 83 unique accessibility issues observed in our study with Axe[^22] and created the categories introduced here for our analysis.
+    <strong>Table 1. A list of categories we assigned to individual Axe accessibility issues.</strong> We reviewed 83 unique accessibility issues observed in our study with Axe and created the categories introduced here for our analysis.
   </caption>
   <thead>
     <tr>
@@ -48,32 +51,32 @@ As a result, we selected a total of 3,112 data portals and 5,009 journal website
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Overall Impact</th>
+      <td scope="row">Overall Impact</td>
       <td>The overall impact of a given issue in the context of life sciences data resources. This label summarizes the four categories below (Criticality, WCAG Level, Difficulty to Fix, and Data Related). For example, if an issue is data-related, critical, difficult to fix, and related to WCAG Level A, the issue is considered to severely impact user tasks.</td>
       <td>Severe<br>Moderate<br>Minor</td>
     </tr>
     <tr>
-      <th scope="row">Criticality</th>
+      <td scope="row">Criticality</td>
       <td>This category describes whether the issue can entirely block users from performing their tasks.</td>
       <td>Critical<br>Less Critical</td>
     </tr>
     <tr>
-      <th scope="row">WCAG Level</th>
+      <td scope="row">WCAG Level</td>
       <td>This category represents the minimum WCAG25 level of conformance that is related to a given issue. An issue with Level A indicates that it is the most essential issue for the success criteria. An issue with Level AA in our study represents that it is an important issue for enhancing accessibility, but it is not part of Level A. Therefore, issues with Level A are the highest priority.</td>
       <td>A<br>AA</td>
     </tr>
     <tr>
-      <th scope="row">Difficulty to Fix in Post-Deployment</th>
+      <td scope="row">Difficulty to Fix in Post-Deployment</td>
       <td>This captures how difficult it is to fix a given issue after the deployment (“post-deployment"), such as addressing issues on already deployed data portals using browser extensions.</td>
       <td>Difficult<br>Moderate<br>Easy</td>
     </tr>
     <tr>
-      <th scope="row">Data Related</th>
+      <td scope="row">Data Related</td>
       <td>This label describes whether the issue is related to perception or interaction with data (e.g., a table in the wrong structure).</td>
       <td>Yes<br>No</td>
     </tr>
     <tr>
-      <th scope="row">Missing-label Related</th>
+      <td scope="row">Missing-label Related</td>
       <td>This category captures whether the issue is related to missing labels (e.g., missing alternative text of images).</td>
       <td>Yes<br>No</td>
     </tr>
@@ -101,7 +104,7 @@ The protocol of the manual evaluation was reviewed by the Institutional Review B
 ### Most common accessibility issues
 <figure>
 <img src="{{ "/assets/papers/2025-analysis-figure-1.png" | relative_url }}" alt="Two subfigures. On the top, three histograms are shown for Data Portals, Journal Websites, and US Government Websites. On the bottom, a dot plot is shown for three resource types."/>
-<figcaption><strong>Fig. 1: Accessibility issues found on life sciences websites.</strong> Proportion of pages with issues in terms of their (A) overall impact, (B) criticality, i.e., whether the issue is likely to block users performing tasks entirely, (C) whether they are related to the perception of and interaction with data (e.g., issues in tables), (D) WCAG levels[^25], and (E) difficulty to fix in post-deployment (e.g., using browser extensions to work around accessibility issues in already deployed websites); (F) Top 10 most frequently observed accessibility issues. The proportion of pages with (G) missing labels and (H) image-related and table-related issues.</figcaption>
+<figcaption><strong>Fig. 1: Accessibility issues found on life sciences websites.</strong> Proportion of pages with issues in terms of their (A) overall impact, (B) criticality, i.e., whether the issue is likely to block users performing tasks entirely, (C) whether they are related to the perception of and interaction with data (e.g., issues in tables), (D) WCAG levels, and (E) difficulty to fix in post-deployment (e.g., using browser extensions to work around accessibility issues in already deployed websites); (F) Top 10 most frequently observed accessibility issues. The proportion of pages with (G) missing labels and (H) image-related and table-related issues.</figcaption>
 </figure>
 
 We analyzed accessibility issues after categorizing them based on several criteria (refer to the Methods section for details). Overall, more than half of the life sciences websites—74.8% data portals and 69.1% journal websites—contain “severe" accessibility issues (Fig. 1A). The severe accessibility issues are identified in our analysis (refer to Methods) by testing several criteria, such as their criticality in performing user tasks and difficulty to fix (Table 1). Most importantly, almost all websites contain issues that (1) can critically block users from performing data-related tasks (Fig. 1B and 1C), (2) are related to minimum WCAG requirements (Fig. 1D), and (3) cannot be easily fixed after the deployment of the websites (Fig. 1E) (e.g., using a browser extension to fix issues on existing websites). A typical example is the absence of required labels (Fig. 1G), such as missing alternative text (or “alt text") for images and links, which is one of the most frequently identified accessibility issues on data portals and journal websites (Fig. 1F). Other common types of issues are ill-structured web pages (e.g., broken heading structure that makes it difficult to navigate a web page with a keyboard and a screen reader) and low color contrast (e.g., links that are hard to distinguish from regular text for low-vision users).
@@ -132,7 +135,7 @@ Despite the notable differences between life sciences data portals and journal w
 ### Real-world impact of accessibility issues
 <figure>
 <img src="{{ "/assets/papers/2025-analysis-figure-4.png" | relative_url }}" alt="Four subpanels show the results of the manual accessibility evaluation, showing the time taken for each of the 10 tasks and subjective responses on confidence, satisfaction, and frustration levels. The first subpanel shows the summary of the results for three data portals, while the rest show the individual results for the data portals."/>
-<figcaption><strong>Fig. 4: Results of manual evaluation of three data portals[^30] [^31] [^32] with a blind screen reader user.</strong> The user performed ten typical tasks on each data portal and gave subjective scores about their confidence, satisfaction, and frustration levels for each task. (A) The three results are aggregated with mean completion time and subjective responses, where error bars represent standard deviation. (B–D) Individual results of three data portals are shown: (B) cBioPortal[^30], (C) ENCODE Data Portal[^32], and (D) HuBMAP Data Portal[^31]. The HuBMAP Data Portal is developed and maintained by the research group led by the senior author of this paper. Note that the purpose of the manual evaluation is not to compare data portals but instead to understand how accessibility issues identified by computational approaches influence the actual use cases.</figcaption>
+<figcaption><strong>Fig. 4: Results of manual evaluation of three data portals<!--[^30] [^31] [^32]--> with a blind screen reader user.</strong> The user performed ten typical tasks on each data portal and gave subjective scores about their confidence, satisfaction, and frustration levels for each task. (A) The three results are aggregated with mean completion time and subjective responses, where error bars represent standard deviation. (B–D) Individual results of three data portals are shown: (B) cBioPortal<!--[^30]-->, (C) ENCODE Data Portal<!--[^32]-->, and (D) HuBMAP Data Portal<!--[^31]-->. The HuBMAP Data Portal is developed and maintained by the research group led by the senior author of this paper. Note that the purpose of the manual evaluation is not to compare data portals but instead to understand how accessibility issues identified by computational approaches influence the actual use cases.</figcaption>
 </figure>
 
 Our preliminary user evaluation of selected important data portals with a blind user complements the computational evaluation results, showing the potential influence of the accessibility issues we identified in real-world use cases. The study participant performed a total of 30 tasks in three data portals[^30] [^31] [^32], which had failure rates of 19.3% (cBioPortal), 2% (ENCODE), and 8.8% (HuBMAP) in our computational evaluation. Refer to the Methods section for the manual evaluation protocol. The participant successfully performed only about half of the tasks (16 out of 30, 53.3%), spending 2.8 minutes out of a maximum of 5 minutes per task on average (Fig. 4). The participant, on average, felt that they were somewhat confident (4.8 out of 7), somewhat satisfied (4.3), and somewhat not frustrated (3.76) with the data portals for each task, where their subjective responses vary across tasks and data portals (Fig. 4A—B). Overall, the participant was able to find metadata of a given dataset or study in all data portals (T5, T7, T8). However, the participant consistently failed to find and download specific datasets (T3, T4, T6).
