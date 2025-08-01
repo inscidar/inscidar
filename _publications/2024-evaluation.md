@@ -5,6 +5,7 @@ year: 2025
 title: "A comprehensive evaluation of life sciences data resources reveals significant accessibility barriers"
 venue: "Nature Scientific Reports"
 publisher_url: "https://www.nature.com/articles/s41598-025-08731-7"
+html_url: "http://inscidar.org/paper-2025/"
 doi: "10.1038/s41598-025-08731-7"
 
 blob_title: "The 2025 Results"
