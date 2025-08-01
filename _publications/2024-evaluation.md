@@ -1,11 +1,11 @@
 ---
 layout: home 
 
-year: 2024
+year: 2025
 title: "A comprehensive evaluation of life sciences data resources reveals significant accessibility barriers"
-venue: "OSF Preprints"
-publisher_url: "https://osf.io/preprints/osf/5v98j"
-doi: "10.31219/osf.io/5v98j"
+venue: "Nature Scientific Reports"
+publisher_url: "https://www.nature.com/articles/s41598-025-08731-7"
+doi: "10.1038/s41598-025-08731-7"
 
 blob_title: "The 2025 Results"
 
