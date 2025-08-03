@@ -21,6 +21,8 @@ title: Home
 {% include publication.html %}
 {% endfor %}
 
+{% include cite.html %}
+
 ## Learn More
 
 <a href="https://hidivelab.org/research/teams/accessibility/">The Accessibility Team at the HIDIVE Lab of Harvard Medical School</a>
@@ -32,4 +34,3 @@ title: Home
 
 This study was in part funded by NIH grants <a href="https://reporter.nih.gov/project-details/10452031">R01HG011773</a> and <a href="https://reporter.nih.gov/project-details/10984200">K99HG013348</a>.
 
-{% include cite.html %}
